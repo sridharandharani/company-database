@@ -1,17 +1,17 @@
-# create a new python project which has employee project for reading employee id employee name designation salary company name mobile number to the data base company
+# create a new python project which has employee project for reading employee id ,employee name ,designation ,salary ,company name,mobile number to the data base called company and upload it in the git hub
 import sqlite3
 
 connection = sqlite3.connect("company.db") #creating a database
 
-connection.execute(''' CREATE TABLE EMPLOYEE(
-                       EMPID INTEGER PRIMARY KEY AUTOINCREMENT,
-                       EMPNAME TEXT,
-                       DESIGNATION TEXT,
-                       SALARY INTEGER,
-                       COMPANYNAME TEXT,
-                       MOBNO INTEGER
-);''')
-print("table created")
+# connection.execute(''' CREATE TABLE EMPLOYEE(
+#                        EMPID INTEGER PRIMARY KEY AUTOINCREMENT,
+#                        EMPNAME TEXT,
+#                        DESIGNATION TEXT,
+#                        SALARY INTEGER,
+#                        COMPANYNAME TEXT,
+#                        MOBNO INTEGER
+# );''')
+print("table created") #database created
 
 get_empname = input("Enter the name :")
 get_designation = input("Enter the designation :")
@@ -20,7 +20,8 @@ get_companyname = input("Enter the company name :")
 get_mobno = input("Enter the mobile no :")
 
 connection.execute(" INSERT INTO EMPLOYEE(EMPNAME,DESIGNATION,SALARY,COMPANYNAME,MOBNO) \
- VALUES('"+get_empname+"','"+get_designation+"',"+get_salary+",'"+get_companyname+"',"+get_mobno+")")# inserting values in table
+ VALUES('"+get_empname+"','"+get_designation+"',"+get_salary+",'"+get_companyname+"',"+get_mobno+")") # inserting values in table
 connection.commit()
 connection.close()
 print("Inserted sucessfully")
+
